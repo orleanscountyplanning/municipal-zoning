@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orleans County Municipal Zoning Regulations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,600;1,8..60,300&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:    #1e3a5f;
+  --navy-dk: #142843;
+  --navy-lt: #2d5490;
+  --accent:  #4899E0;
+  --gold:    #c9a84c;
+  --text:    #1e293b;
+  --muted:   #64748b;
+  --light:   #f4f6f9;
+  --white:   #ffffff;
+  --border:  #dde3ed;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--light);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+header {
+  background: var(--navy-dk);
+  border-bottom: 3px solid var(--gold);
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.header-logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--navy-dk);
+  flex-shrink: 0;
+}
+.header-text-top {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.03em;
+}
+.header-text-sub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 1px;
+}
+.header-nav {
+  display: flex;
+  gap: 24px;
+}
+.header-nav a {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+.header-nav a:hover { color: var(--white); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 64px 40px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(255,255,255,0.015) 40px,
+    rgba(255,255,255,0.015) 41px
+  );
+}
+.hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.15);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 16px;
+  max-width: 620px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  font-weight: 300;
+}
+.hero-desc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: 28px;
+}
+.hero-meta {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.hero-stat-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+.hero-stat-lbl {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.hero-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.15);
+  align-self: center;
+}
+
+/* ── MAIN CONTENT ── */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 40px 64px;
+}
+
+/* ── SECTION HEADERS ── */
+.section-hdr {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.section-hdr h2 {
+  font-family: 'Source Serif 4', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.section-hdr-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── MUNICIPALITY GRID ── */
+.muni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-bottom: 56px;
+}
+
+/* ── MUNICIPALITY CARD ── */
+.muni-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.muni-card:hover {
+  box-shadow: 0 4px 20px rgba(30,58,95,0.1);
+  transform: translateY(-2px);
+}
+.muni-card.available { cursor: pointer; }
+.muni-card.coming-soon { opacity: 0.6; }
+
+.muni-card-top {
+  background: var(--navy);
+  padding: 16px 18px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.muni-type-badge {
+  background: rgba(255,255,255,0.12);
+  border-radius: 3px;
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.06em;
+}
+.muni-status-badge {
+  border-radius: 3px;
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.muni-status-badge.live {
+  background: rgba(22,163,74,0.25);
+  color: #4ade80;
+}
+.muni-status-badge.soon {
+  background: rgba(201,168,76,0.2);
+  color: var(--gold);
+}
+.muni-card-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 8px;
+}
+.muni-card-body {
+  padding: 14px 18px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.muni-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.muni-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.muni-tag {
+  background: #eef3fa;
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 2px 7px;
+}
+.muni-btn {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: fit-content;
+}
+.muni-btn:hover { background: var(--navy-lt); }
+.muni-btn.disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: default;
+}
+.muni-btn.disabled:hover { background: #e2e8f0; }
+.btn-arrow { font-size: 14px; }
+
+/* ── INFO PANELS ── */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.info-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 24px;
+}
+.info-panel-icon {
+  width: 36px;
+  height: 36px;
+  background: #eef3fa;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.info-panel h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.info-panel p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.info-panel a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.info-panel a:hover { text-decoration: underline; }
+
+/* ── DISCLAIMER ── */
+.disclaimer {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 12px;
+  color: #92400e;
+  line-height: 1.6;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy-dk);
+  border-top: 3px solid var(--gold);
+  padding: 32px 40px;
+}
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-left {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+}
+.footer-left strong { color: rgba(255,255,255,0.7); }
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+
+@media (max-width: 700px) {
+  .hero { padding: 40px 20px 36px; }
+  .hero h1 { font-size: 28px; }
+  .main { padding: 32px 20px 48px; }
+  .info-grid { grid-template-columns: 1fr; }
+  .header-nav { display: none; }
+  header { padding: 0 20px; }
+  footer { padding: 24px 20px; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-logo-circle">OC</div>
+      <div>
+        <div class="header-text-top">Orleans County Planning &amp; Development</div>
+        <div class="header-text-sub">Municipal Zoning Regulations</div>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a href="https://www.orleanscountyny.gov/departments/planning" target="_blank">Planning Dept.</a>
+      <a href="https://orleanscountyplanning.github.io/municipal-zoning/">Home</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">&#128205; Orleans County, New York</div>
+    <h1>Municipal Zoning<br><em>Regulations Viewer</em></h1>
+    <p class="hero-desc">Interactive access to zoning codes for towns and villages across Orleans County. Search permitted uses, dimensional standards, special permit criteria, and more — directly from the official municipal ordinances.</p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <div class="hero-stat-num">14</div>
+        <div class="hero-stat-lbl">Municipalities</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1</div>
+        <div class="hero-stat-lbl">Live Now</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">13</div>
+        <div class="hero-stat-lbl">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- TOWNS -->
+  <div class="section-hdr">
+    <h2>Towns</h2>
+    <div class="section-hdr-line"></div>
+  </div>
+
+  <div class="muni-grid">
+
+    <!-- TOWN OF YATES — LIVE -->
+    <div class="muni-card available">
+      <div class="muni-card-top">
+        <div>
+          <div class="muni-type-badge">TOWN</div>
+          <div class="muni-card-name">Town of Yates</div>
+        </div>
+        <div class="muni-status-badge live">&#9679; Live</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Full interactive viewer for Chapter 240 — Zoning. Covers Articles I through X including district regulations, definitions, special permit criteria, and site plan review.</p>
+        <div class="muni-tags">
+          <span class="muni-tag">10 Articles</span>
+          <span class="muni-tag">120 Sections</span>
+          <span class="muni-tag">Full-text search</span>
+          <span class="muni-tag">HA · AR · RR · GB · LI · I · WR · WD</span>
+        </div>
+        <a class="muni-btn" href="./yates/">View Zoning Code <span class="btn-arrow">&#8594;</span></a>
+      </div>
+    </div>
+
+    <!-- COMING SOON TOWNS -->
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Albion</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Barre</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Carlton</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Clarendon</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Gaines</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Kendall</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Murray</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Ridgeway</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Shelby</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VILLAGES -->
+  <div class="section-hdr">
+    <h2>Villages</h2>
+    <div class="section-hdr-line"></div>
+  </div>
+
+  <div class="muni-grid">
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Albion</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Holley</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Lyndonville</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+    <div class="muni-card coming-soon">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Medina</div></div>
+        <div class="muni-status-badge soon">Coming Soon</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Interactive zoning code viewer in development.</p>
+        <button class="muni-btn disabled" disabled>Coming Soon</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- INFO PANELS -->
+  <div class="info-grid">
+    <div class="info-panel">
+      <div class="info-panel-icon">&#128222;</div>
+      <h3>Contact the Planning Department</h3>
+      <p>For permit applications, variance requests, zoning interpretations, or other official determinations, contact the Orleans County Department of Planning and Development directly.<br><br>
+      <a href="https://www.orleanscountyny.gov/departments/planning" target="_blank">Visit the Planning Department &rarr;</a></p>
+    </div>
+    <div class="info-panel">
+      <div class="info-panel-icon">&#128204;</div>
+      <h3>About This Viewer</h3>
+      <p>Zoning codes are sourced from official municipal ordinances published on <a href="https://ecode360.com" target="_blank">eCode360.com</a>. Each viewer is updated periodically but may not reflect the most recent amendments. Always verify with the relevant municipal office for official determinations.</p>
+    </div>
+  </div>
+
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> The information provided on this site is for general reference purposes only and does not constitute legal advice or an official zoning determination. Zoning codes are subject to amendment. For official interpretations, special use permits, variances, or building permits, contact the relevant Town or Village Zoning Office or Code Enforcement Officer.
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left">
+      <strong>Orleans County Department of Planning and Development</strong><br>
+      Municipal Zoning Regulations Viewer &nbsp;&middot;&nbsp; Orleans County, New York<br>
+      Source material: ecode360.com &nbsp;&middot;&nbsp; For reference only
+    </div>
+    <div class="footer-links">
+      <a href="https://www.orleanscountyny.gov/departments/planning" target="_blank">Planning Dept.</a>
+      <a href="https://orleanscountyplanning.github.io/municipal-zoning/">Home</a>
+      <a href="./yates/">Town of Yates</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
