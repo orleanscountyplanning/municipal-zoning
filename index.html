@@ -31,6 +31,7 @@ body {
   min-height: 100vh;
 }
 
+/* ── HEADER ── */
 header {
   background: var(--navy-dk);
   border-bottom: 4px solid var(--accent);
@@ -54,21 +55,18 @@ header {
   gap: 14px;
 }
 .header-logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  overflow: hidden;
+  width: 58px;
+  height: 58px;
   flex-shrink: 0;
-  border: 2px solid rgba(255,255,255,0.2);
 }
 .header-logo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .header-logo-fallback {
-  width: 48px;
-  height: 48px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   background: var(--accent);
   display: flex;
@@ -76,10 +74,9 @@ header {
   justify-content: center;
   font-family: 'Source Serif 4', serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--white);
   flex-shrink: 0;
-  border: 2px solid rgba(255,255,255,0.2);
 }
 .header-text-top {
   font-size: 14px;
@@ -124,6 +121,7 @@ header {
   color: var(--white);
 }
 
+/* ── HERO ── */
 .hero {
   background: var(--navy);
   padding: 60px 40px 52px;
@@ -135,7 +133,13 @@ header {
   content: '';
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(-55deg, transparent, transparent 38px, rgba(255,255,255,0.018) 38px, rgba(255,255,255,0.018) 39px);
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent,
+    transparent 38px,
+    rgba(255,255,255,0.018) 38px,
+    rgba(255,255,255,0.018) 39px
+  );
   pointer-events: none;
 }
 .hero::after {
@@ -198,14 +202,44 @@ header {
   padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,0.12);
 }
-.hero-stat { display: flex; flex-direction: column; gap: 3px; }
-.hero-stat-num { font-size: 26px; font-weight: 700; color: var(--white); line-height: 1; }
-.hero-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; text-transform: uppercase; }
-.hero-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); align-self: center; }
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.hero-stat-num {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+.hero-stat-lbl {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.hero-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255,255,255,0.15);
+  align-self: center;
+}
 
-.main { max-width: 1100px; margin: 0 auto; padding: 48px 40px 64px; }
+/* ── MAIN ── */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 40px 64px;
+}
 
-.section-hdr { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+/* ── SECTION HEADERS ── */
+.section-hdr {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
 .section-hdr-label {
   font-size: 11px;
   font-weight: 700;
@@ -217,15 +251,26 @@ header {
   border-radius: 3px;
   white-space: nowrap;
 }
-.section-hdr-line { flex: 1; height: 1px; background: var(--rule); }
-.section-hdr-count { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.section-hdr-line {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+.section-hdr-count {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
 
+/* ── MUNICIPALITY GRID ── */
 .muni-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 14px;
   margin-bottom: 52px;
 }
+
+/* ── MUNICIPALITY CARD ── */
 .muni-card {
   background: var(--white);
   border: 1px solid var(--border);
@@ -240,6 +285,7 @@ header {
   transform: translateY(-2px);
 }
 .muni-card.coming-soon { opacity: 0.55; }
+
 .muni-card-top {
   background: var(--navy);
   padding: 14px 16px 12px;
@@ -257,14 +303,52 @@ header {
   color: rgba(255,255,255,0.7);
   letter-spacing: 0.06em;
 }
-.muni-status-badge { border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; }
-.muni-status-badge.available { background: rgba(72,153,224,0.25); color: #90cdf4; }
-.muni-status-badge.soon { background: rgba(201,168,76,0.2); color: var(--gold); }
-.muni-card-name { font-size: 15px; font-weight: 700; color: var(--white); margin-top: 7px; }
-.muni-card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-.muni-desc { font-size: 12px; color: var(--muted); line-height: 1.65; }
-.muni-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.muni-tag { background: var(--accent-lt); color: var(--navy-dk); font-size: 10px; font-weight: 600; border-radius: 3px; padding: 2px 7px; }
+.muni-status-badge {
+  border-radius: 3px;
+  padding: 2px 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.muni-status-badge.available {
+  background: rgba(72,153,224,0.25);
+  color: #90cdf4;
+}
+.muni-status-badge.soon {
+  background: rgba(201,168,76,0.2);
+  color: var(--gold);
+}
+.muni-card-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 7px;
+}
+.muni-card-body {
+  padding: 14px 16px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.muni-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.muni-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.muni-tag {
+  background: var(--accent-lt);
+  color: var(--navy-dk);
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 3px;
+  padding: 2px 7px;
+}
 .muni-btn {
   margin-top: auto;
   display: inline-flex;
@@ -284,12 +368,30 @@ header {
   font-family: 'Source Sans 3', sans-serif;
 }
 .muni-btn:hover { background: var(--navy-lt); }
-.muni-btn.disabled { background: #e2e8f0; color: #94a3b8; cursor: default; }
+.muni-btn.disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: default;
+}
 .muni-btn.disabled:hover { background: #e2e8f0; }
 
-.map-section { margin-bottom: 40px; }
-.map-section-hdr { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
-.map-embed-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; position: relative; }
+/* ── MAP EMBED ── */
+.map-section {
+  margin-bottom: 40px;
+}
+.map-section-hdr {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.map-embed-wrap {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
 .map-placeholder {
   height: 480px;
   display: flex;
@@ -300,9 +402,23 @@ header {
   background: linear-gradient(135deg, #eef3fa 0%, #d6e4f5 100%);
   color: var(--navy);
 }
-.map-placeholder-icon { font-size: 48px; opacity: 0.4; }
-.map-placeholder-title { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; color: var(--navy); }
-.map-placeholder-sub { font-size: 12px; color: var(--muted); text-align: center; max-width: 360px; line-height: 1.6; }
+.map-placeholder-icon {
+  font-size: 48px;
+  opacity: 0.4;
+}
+.map-placeholder-title {
+  font-family: 'Source Serif 4', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.map-placeholder-sub {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  max-width: 360px;
+  line-height: 1.6;
+}
 .map-placeholder-badge {
   background: rgba(42,85,152,0.12);
   border: 1px dashed var(--navy);
@@ -313,11 +429,29 @@ header {
   color: var(--navy);
   letter-spacing: 0.04em;
 }
-.map-embed-wrap iframe { width: 100%; height: 480px; border: none; display: block; }
+.map-embed-wrap iframe {
+  width: 100%;
+  height: 480px;
+  border: none;
+  display: block;
+}
 
-.search-section { margin-bottom: 24px; }
-.muni-search-wrap { position: relative; }
-.muni-search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--muted); pointer-events: none; }
+/* ── SEARCH BAR ── */
+.search-section {
+  margin-bottom: 24px;
+}
+.muni-search-wrap {
+  position: relative;
+}
+.muni-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: var(--muted);
+  pointer-events: none;
+}
 .muni-search {
   width: 100%;
   padding: 12px 40px 12px 42px;
@@ -331,12 +465,38 @@ header {
   transition: border-color 0.2s, box-shadow 0.2s;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
-.muni-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(72,153,224,0.15); }
+.muni-search:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(72,153,224,0.15);
+}
 .muni-search::placeholder { color: #94a3b8; }
-.muni-search-clear { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 20px; color: #94a3b8; cursor: pointer; display: none; line-height: 1; background: none; border: none; }
+.muni-search-clear {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #94a3b8;
+  cursor: pointer;
+  display: none;
+  line-height: 1;
+  background: none;
+  border: none;
+}
 .muni-search-clear:hover { color: var(--navy); }
-.no-results { display: none; text-align: center; padding: 32px; color: var(--muted); font-size: 13px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 14px; }
+.no-results {
+  display: none;
+  text-align: center;
+  padding: 32px;
+  color: var(--muted);
+  font-size: 13px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
 
+/* ── BACK TO TOP ── */
 .back-to-top {
   position: fixed;
   bottom: 28px;
@@ -359,9 +519,12 @@ header {
   pointer-events: none;
   z-index: 200;
 }
-.back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
 .back-to-top:hover { background: var(--navy-lt); }
-
 .info-panel {
   background: var(--white);
   border: 1px solid var(--border);
@@ -370,17 +533,69 @@ header {
   margin-bottom: 28px;
   border-left: 4px solid var(--accent);
 }
-.info-panel h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-.info-panel p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+.info-panel h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.info-panel p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.info-panel a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.info-panel a:hover { text-decoration: underline; }
 
+/* ── DISCLAIMER ── */
+.disclaimer {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 12px;
+  color: #92400e;
+  line-height: 1.65;
+}
+
+/* ── FOOTER ── */
 footer {
   background: var(--navy-dk);
   border-top: 4px solid var(--accent);
   padding: 32px 40px;
+  margin-top: 0;
 }
-.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-.footer-left { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.8; }
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-left {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.8;
+}
 .footer-left strong { color: rgba(255,255,255,0.75); }
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
 
 @media (max-width: 700px) {
   .hero { padding: 36px 20px 32px; }
@@ -395,6 +610,7 @@ footer {
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="header-inner">
     <div class="header-brand">
@@ -413,31 +629,43 @@ footer {
   </div>
 </header>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-eyebrow">&#128205; Orleans County, New York</div>
     <h1>Municipal Zoning<br><em>Regulations Viewer</em></h1>
     <p class="hero-desc">This resource provides interactive access to the official zoning codes for towns and villages across Orleans County, New York. Members of the public, property owners, developers, and planning professionals can search and browse permitted uses, dimensional standards, conditional use criteria, special permit requirements, definitions, and more. All content is drawn directly from official municipal zoning ordinances and is organized by article and section for easy reference.</p>
     <div class="hero-meta">
-      <div class="hero-stat"><div class="hero-stat-num">14</div><div class="hero-stat-lbl">Municipalities</div></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">14</div>
+        <div class="hero-stat-lbl">Municipalities</div>
+      </div>
       <div class="hero-divider"></div>
-      <div class="hero-stat"><div class="hero-stat-num">1</div><div class="hero-stat-lbl">Available Now</div></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1</div>
+        <div class="hero-stat-lbl">Available Now</div>
+      </div>
       <div class="hero-divider"></div>
-      <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-lbl">Coming Soon</div></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">13</div>
+        <div class="hero-stat-lbl">Coming Soon</div>
+      </div>
     </div>
   </div>
 </div>
 
+<!-- MAIN -->
 <main class="main">
 
+  <!-- INTERACTIVE MAP -->
   <div class="map-section">
     <div class="map-section-hdr">
       <div class="section-hdr-label">Interactive Zoning Map</div>
       <div class="section-hdr-line"></div>
     </div>
     <div class="map-embed-wrap">
-      <!-- Replace the div below with your iframe once the ArcGIS map is ready -->
-      <!-- <iframe src="YOUR_ARCGIS_EMBED_URL" width="100%" height="480" frameborder="0" allowfullscreen></iframe> -->
+      <!-- PLACEHOLDER: Replace the div below with an <iframe> tag once your ArcGIS web map is ready -->
+      <!-- Example: <iframe src="YOUR_ARCGIS_EMBED_URL" width="100%" height="480" frameborder="0" allowfullscreen></iframe> -->
       <div class="map-placeholder">
         <div class="map-placeholder-icon">&#128506;</div>
         <div class="map-placeholder-title">Orleans County Zoning Districts Map</div>
@@ -447,6 +675,7 @@ footer {
     </div>
   </div>
 
+  <!-- MUNICIPALITY SEARCH -->
   <div class="search-section">
     <div class="muni-search-wrap">
       <span class="muni-search-icon">&#128269;</span>
@@ -456,6 +685,7 @@ footer {
   </div>
   <div class="no-results" id="noResults">No municipalities match your search.</div>
 
+  <!-- TOWNS -->
   <div class="section-hdr" id="towns-hdr">
     <div class="section-hdr-label">Towns</div>
     <div class="section-hdr-line"></div>
@@ -464,6 +694,7 @@ footer {
 
   <div class="muni-grid">
 
+    <!-- TOWN OF YATES -->
     <div class="muni-card available">
       <div class="muni-card-top">
         <div>
@@ -484,6 +715,7 @@ footer {
       </div>
     </div>
 
+    <!-- COMING SOON TOWNS -->
     <div class="muni-card coming-soon">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Albion</div></div>
@@ -585,6 +817,7 @@ footer {
 
   </div>
 
+  <!-- VILLAGES -->
   <div class="section-hdr" id="villages-hdr">
     <div class="section-hdr-label">Villages</div>
     <div class="section-hdr-line"></div>
@@ -639,6 +872,7 @@ footer {
 
   </div>
 
+  <!-- COMBINED INFO + DISCLAIMER PANEL -->
   <div class="info-panel">
     <h3>About This Viewer</h3>
     <p>This resource presents official zoning ordinances for towns and villages across Orleans County, organized by article and section with full-text search across the entire code. Content is updated periodically but may not reflect the most recent amendments. For permit applications, variances, official zoning interpretations, or any land use or development decisions, contact the relevant Town or Village Zoning Office or Code Enforcement Officer directly. This site is for general reference only and does not constitute legal advice or an official zoning determination.</p>
@@ -646,6 +880,7 @@ footer {
 
 </main>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
@@ -655,38 +890,57 @@ footer {
   </div>
 </footer>
 
+<!-- BACK TO TOP -->
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8679;</button>
 
 <script>
+// Back to top visibility
 window.addEventListener('scroll', function() {
   const btn = document.getElementById('backToTop');
-  btn.classList.toggle('visible', window.scrollY > 400);
+  if (window.scrollY > 400) {
+    btn.classList.add('visible');
+  } else {
+    btn.classList.remove('visible');
+  }
 });
 
+// Municipality search filter
 function filterMunis(query) {
   const q = query.trim().toLowerCase();
-  document.getElementById('muniClear').style.display = q ? 'block' : 'none';
+  const clearBtn = document.getElementById('muniClear');
+  const noResults = document.getElementById('noResults');
+  clearBtn.style.display = q ? 'block' : 'none';
+
   const cards = document.querySelectorAll('.muni-card');
   let visibleCount = 0;
+
   cards.forEach(function(card) {
     const name = card.querySelector('.muni-card-name');
     if (!name) return;
-    const match = !q || name.textContent.toLowerCase().includes(q);
+    const text = name.textContent.toLowerCase();
+    const match = !q || text.includes(q);
     card.style.display = match ? '' : 'none';
     if (match) visibleCount++;
   });
+
+  // Show/hide section headers based on whether any cards in that section are visible
+  const townCards = document.querySelectorAll('#towns-hdr ~ .muni-grid .muni-card');
+  const villageCards = document.querySelectorAll('#villages-hdr ~ .muni-grid .muni-card');
   const townHdr = document.getElementById('towns-hdr');
   const villageHdr = document.getElementById('villages-hdr');
   const townGrid = townHdr ? townHdr.nextElementSibling : null;
   const villageGrid = villageHdr ? villageHdr.nextElementSibling : null;
+
   let townVisible = 0, villageVisible = 0;
-  document.querySelectorAll('#towns-hdr ~ .muni-grid .muni-card').forEach(c => { if (c.style.display !== 'none') townVisible++; });
-  document.querySelectorAll('#villages-hdr ~ .muni-grid .muni-card').forEach(c => { if (c.style.display !== 'none') villageVisible++; });
+  townCards.forEach(c => { if (c.style.display !== 'none') townVisible++; });
+  villageCards.forEach(c => { if (c.style.display !== 'none') villageVisible++; });
+
   if (townHdr) townHdr.style.display = townVisible > 0 ? '' : 'none';
   if (villageHdr) villageHdr.style.display = villageVisible > 0 ? '' : 'none';
   if (townGrid) townGrid.style.display = townVisible > 0 ? '' : 'none';
   if (villageGrid) villageGrid.style.display = villageVisible > 0 ? '' : 'none';
-  document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
 }
 
 function clearMuniSearch() {
