@@ -315,8 +315,8 @@ header {
   color: #90cdf4;
 }
 .muni-status-badge.soon {
-  background: rgba(100,116,139,0.2);
-  color: #94a3b8;
+  background: rgba(201,168,76,0.2);
+  color: var(--gold);
 }
 .muni-card-name {
   font-size: 15px;
@@ -374,6 +374,26 @@ header {
   cursor: default;
 }
 .muni-btn.disabled:hover { background: #e2e8f0; }
+.muni-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 13px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 1px solid var(--rule);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  font-family: 'Source Sans 3', sans-serif;
+}
+.muni-btn-secondary:hover {
+  background: var(--accent-lt);
+  border-color: var(--accent);
+}
 
 /* ── MAP EMBED ── */
 .map-section {
@@ -632,24 +652,23 @@ footer {
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
-    <div style="display:flex;align-items:center;gap:60px;">
-      <div style="flex:1;">
-        <div class="hero-eyebrow">&#128205; Orleans County, New York</div>
-        <h1>Municipal Zoning<br><em>Regulations Viewer</em></h1>
-        <p class="hero-desc">This resource provides interactive access to the official zoning codes for towns and villages across Orleans County, New York. Members of the public, property owners, developers, and planning professionals can search and browse permitted uses, dimensional standards, conditional use criteria, special permit requirements, definitions, and more. All content is drawn directly from official municipal zoning ordinances and is organized by article and section for easy reference.</p>
-        <div class="hero-meta">
-          <div class="hero-stat"><div class="hero-stat-num">14</div><div class="hero-stat-lbl">Municipalities</div></div>
-          <div class="hero-divider"></div>
-          <div class="hero-stat"><div class="hero-stat-num">1</div><div class="hero-stat-lbl">Available Now</div></div>
-          <div class="hero-divider"></div>
-          <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-lbl">Coming Soon</div></div>
-        </div>
+    <div class="hero-eyebrow">&#128205; Orleans County, New York</div>
+    <h1>Municipal Zoning<br><em>Regulations Viewer</em></h1>
+    <p class="hero-desc">This resource provides interactive access to the official zoning codes for towns and villages across Orleans County, New York. Members of the public, property owners, developers, and planning professionals can search and browse permitted uses, dimensional standards, conditional use criteria, special permit requirements, definitions, and more. All content is drawn directly from official municipal zoning ordinances and is organized by article and section for easy reference.</p>
+    <div class="hero-meta">
+      <div class="hero-stat">
+        <div class="hero-stat-num">14</div>
+        <div class="hero-stat-lbl">Municipalities</div>
       </div>
-      <div style="flex:0 0 280px;border-left:1px solid rgba(255,255,255,0.15);padding-left:36px;align-self:center;">
-        <div style="font-size:52px;color:rgba(255,255,255,0.18);font-family:'Source Serif 4',serif;line-height:1;margin-bottom:10px;">&ldquo;</div>
-        <p style="font-family:'Source Serif 4',serif;font-size:17px;font-weight:300;font-style:italic;color:rgba(255,255,255,0.88);line-height:1.7;margin-bottom:20px;">Zoning is the most powerful tool available to a community to guide its future growth and development.</p>
-        <div style="width:32px;height:2px;background:var(--accent);margin-bottom:12px;"></div>
-        <p style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.45);letter-spacing:0.06em;text-transform:uppercase;line-height:1.6;">New York State Department of State<br>Division of Local Government Services</p>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1</div>
+        <div class="hero-stat-lbl">Available Now</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">13</div>
+        <div class="hero-stat-lbl">Coming Soon</div>
       </div>
     </div>
   </div>
@@ -705,14 +724,15 @@ footer {
         <div class="muni-status-badge available">&#9679; Available</div>
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Full interactive viewer for Chapter 240. Covers Articles I through X including all district regulations, definitions, special permit criteria, administration, and site plan review.</p>
+        <p class="muni-desc">Official zoning code for the Town of Yates (Chapter 240), hosted on eCode360. Includes all district regulations, definitions, special permit criteria, and site plan review standards.</p>
         <div class="muni-tags">
-          <span class="muni-tag">10 Articles</span>
-          <span class="muni-tag">120 Sections</span>
-          <span class="muni-tag">Full-text search</span>
-          <span class="muni-tag">HA · AR · RR · GB · LI · I · WR · WD</span>
+          <span class="muni-tag">HA · AR · RR · GB · LI · I · WR · WD · PDD</span>
+          <span class="muni-tag">eCode360</span>
         </div>
-        <a class="muni-btn" href="./yates/">View Zoning Code &#8594;</a>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <a class="muni-btn" href="https://ecode360.com/YA6634" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./yates/YatesZoningMap.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
       </div>
     </div>
 
