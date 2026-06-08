@@ -21,604 +21,87 @@
   --border:    #dde3ed;
   --gold:      #c9a84c;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  font-family: 'Source Sans 3', sans-serif;
-  background: var(--light);
-  color: var(--text);
-  min-height: 100vh;
-}
-
-/* ── HEADER ── */
-header {
-  background: var(--navy-dk);
-  border-bottom: 4px solid var(--accent);
-  padding: 0 40px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-}
-.header-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 68px;
-}
-.header-brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.header-logo {
-  width: 58px;
-  height: 58px;
-  flex-shrink: 0;
-}
-.header-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.header-logo-fallback {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Source Serif 4', serif;
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--white);
-  flex-shrink: 0;
-}
-.header-text-top {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-}
-.header-text-sub {
-  font-size: 10px;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-top: 2px;
-}
-.header-nav {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-.header-nav a {
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.75);
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  padding: 6px 12px;
-  border-radius: 5px;
-  transition: background 0.2s, color 0.2s;
-  white-space: nowrap;
-}
-.header-nav a:hover {
-  background: rgba(255,255,255,0.1);
-  color: var(--white);
-}
-.header-nav a.primary {
-  background: transparent;
-  color: rgba(255,255,255,0.75);
-}
-.header-nav a.primary:hover {
-  background: rgba(255,255,255,0.1);
-  color: var(--white);
-}
-
-/* ── HERO ── */
-.hero {
-  background: var(--navy);
-  padding: 60px 40px 52px;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 4px solid var(--accent);
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    -55deg,
-    transparent,
-    transparent 38px,
-    rgba(255,255,255,0.018) 38px,
-    rgba(255,255,255,0.018) 39px
-  );
-  pointer-events: none;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  right: -80px;
-  top: -80px;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(72,153,224,0.12) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(72,153,224,0.2);
-  border: 1px solid rgba(72,153,224,0.4);
-  border-radius: 4px;
-  padding: 4px 12px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--accent-lt);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.hero h1 {
-  font-family: 'Source Serif 4', serif;
-  font-size: 40px;
-  font-weight: 600;
-  color: var(--white);
-  line-height: 1.18;
-  margin-bottom: 18px;
-  max-width: 640px;
-}
-.hero h1 em {
-  font-style: italic;
-  color: rgba(255,255,255,0.65);
-  font-weight: 300;
-}
-.hero-desc {
-  font-size: 15px;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.75;
-  max-width: 620px;
-  margin-bottom: 32px;
-}
-.hero-meta {
-  display: flex;
-  gap: 28px;
-  flex-wrap: wrap;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.12);
-}
-.hero-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.hero-stat-num {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1;
-}
-.hero-stat-lbl {
-  font-size: 11px;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.hero-divider {
-  width: 1px;
-  height: 40px;
-  background: rgba(255,255,255,0.15);
-  align-self: center;
-}
-
-/* ── MAIN ── */
-.main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 48px 40px 64px;
-}
-
-/* ── SECTION HEADERS ── */
-.section-hdr {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 22px;
-}
-.section-hdr-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: var(--navy);
-  padding: 4px 12px;
-  border-radius: 3px;
-  white-space: nowrap;
-}
-.section-hdr-line {
-  flex: 1;
-  height: 1px;
-  background: var(--rule);
-}
-.section-hdr-count {
-  font-size: 11px;
-  color: var(--muted);
-  white-space: nowrap;
-}
-
-/* ── MUNICIPALITY GRID ── */
-.muni-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 14px;
-  margin-bottom: 52px;
-}
-
-/* ── MUNICIPALITY CARD ── */
-.muni-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.2s, transform 0.2s;
-}
-.muni-card.available:hover {
-  box-shadow: 0 4px 18px rgba(42,85,152,0.13);
-  transform: translateY(-2px);
-}
+body { font-family: 'Source Sans 3', sans-serif; background: var(--light); color: var(--text); min-height: 100vh; }
+header { background: var(--navy-dk); border-bottom: 4px solid var(--accent); padding: 0 40px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+.header-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.header-brand { display: flex; align-items: center; gap: 14px; }
+.header-logo { width: 58px; height: 58px; flex-shrink: 0; }
+.header-logo img { width: 100%; height: 100%; object-fit: contain; }
+.header-logo-fallback { width: 58px; height: 58px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 16px; color: var(--white); flex-shrink: 0; }
+.header-text-top { font-size: 14px; font-weight: 700; color: var(--white); letter-spacing: 0.01em; line-height: 1.2; }
+.header-text-sub { font-size: 10px; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+.header-nav { display: flex; gap: 6px; align-items: center; }
+.header-nav a { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.75); text-decoration: none; letter-spacing: 0.03em; padding: 6px 12px; border-radius: 5px; transition: background 0.2s, color 0.2s; white-space: nowrap; }
+.header-nav a:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+.header-nav a.primary { background: transparent; color: rgba(255,255,255,0.75); }
+.header-nav a.primary:hover { background: rgba(255,255,255,0.1); color: var(--white); }
+.hero { background: var(--navy); padding: 60px 40px 52px; position: relative; overflow: hidden; border-bottom: 4px solid var(--accent); }
+.hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-55deg, transparent, transparent 38px, rgba(255,255,255,0.018) 38px, rgba(255,255,255,0.018) 39px); pointer-events: none; }
+.hero::after { content: ''; position: absolute; right: -80px; top: -80px; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, rgba(72,153,224,0.12) 0%, transparent 70%); pointer-events: none; }
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.hero h1 { font-family: 'Source Serif 4', serif; font-size: 40px; font-weight: 600; color: var(--white); line-height: 1.18; margin-bottom: 18px; max-width: 640px; }
+.hero h1 em { font-style: italic; color: rgba(255,255,255,0.65); font-weight: 300; }
+.hero-desc { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 620px; margin-bottom: 32px; }
+.hero-meta { display: flex; gap: 28px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
+.hero-stat { display: flex; flex-direction: column; gap: 3px; }
+.hero-stat-num { font-size: 26px; font-weight: 700; color: var(--white); line-height: 1; }
+.hero-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; text-transform: uppercase; }
+.hero-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); align-self: center; }
+.main { max-width: 1100px; margin: 0 auto; padding: 48px 40px 64px; }
+.section-hdr { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.section-hdr-label { font-size: 11px; font-weight: 700; color: var(--white); letter-spacing: 0.08em; text-transform: uppercase; background: var(--navy); padding: 4px 12px; border-radius: 3px; white-space: nowrap; }
+.section-hdr-line { flex: 1; height: 1px; background: var(--rule); }
+.section-hdr-count { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.muni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-bottom: 52px; }
+.muni-card { background: var(--white); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; }
+.muni-card.available:hover { box-shadow: 0 4px 18px rgba(42,85,152,0.13); transform: translateY(-2px); }
+.muni-card.partial:hover { box-shadow: 0 4px 18px rgba(42,85,152,0.08); transform: translateY(-1px); }
 .muni-card.coming-soon { opacity: 0.55; }
-
-.muni-card-top {
-  background: var(--navy);
-  padding: 14px 16px 12px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-bottom: 3px solid var(--accent);
-}
-.muni-type-badge {
-  background: rgba(255,255,255,0.14);
-  border-radius: 3px;
-  padding: 2px 7px;
-  font-size: 10px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.06em;
-  width: fit-content;
-}
-.muni-status-badge {
-  border-radius: 3px;
-  padding: 2px 7px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-.muni-status-badge.available {
-  background: rgba(72,153,224,0.25);
-  color: #90cdf4;
-}
-.muni-status-badge.soon {
-  background: rgba(100,116,139,0.2);
-  color: #94a3b8;
-}
-.muni-card-name {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--white);
-  margin-top: 7px;
-}
-.muni-card-body {
-  padding: 14px 16px 16px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.muni-desc {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.65;
-}
-.muni-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.muni-tag {
-  background: var(--accent-lt);
-  color: var(--navy-dk);
-  font-size: 10px;
-  font-weight: 600;
-  border-radius: 3px;
-  padding: 2px 7px;
-}
-.muni-btn {
-  margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: var(--navy);
-  color: var(--white);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 8px 14px;
-  border-radius: 5px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
-  width: fit-content;
-  font-family: 'Source Sans 3', sans-serif;
-}
+.muni-card-top { background: var(--navy); padding: 14px 16px 12px; display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 3px solid var(--accent); }
+.muni-type-badge { background: rgba(255,255,255,0.14); border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: 0.06em; width: fit-content; }
+.muni-status-badge { border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap; }
+.muni-status-badge.available { background: rgba(72,153,224,0.25); color: #90cdf4; }
+.muni-status-badge.partial { background: rgba(201,168,76,0.25); color: #e2c97e; }
+.muni-status-badge.soon { background: rgba(100,116,139,0.2); color: #94a3b8; }
+.muni-card-name { font-size: 15px; font-weight: 700; color: var(--white); margin-top: 7px; }
+.muni-card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.muni-desc { font-size: 12px; color: var(--muted); line-height: 1.65; }
+.muni-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.muni-tag { background: var(--accent-lt); color: var(--navy-dk); font-size: 10px; font-weight: 600; border-radius: 3px; padding: 2px 7px; }
+.muni-btn { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; background: var(--navy); color: var(--white); font-size: 12px; font-weight: 700; padding: 8px 14px; border-radius: 5px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; width: fit-content; font-family: 'Source Sans 3', sans-serif; }
 .muni-btn:hover { background: var(--navy-lt); }
-.muni-btn.disabled {
-  background: #e2e8f0;
-  color: #94a3b8;
-  cursor: default;
-}
-.muni-btn.disabled:hover { background: #e2e8f0; }
-.muni-btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: transparent;
-  color: var(--navy);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 7px 13px;
-  border-radius: 5px;
-  text-decoration: none;
-  border: 1px solid var(--rule);
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-  font-family: 'Source Sans 3', sans-serif;
-}
-.muni-btn-secondary:hover {
-  background: var(--accent-lt);
-  border-color: var(--accent);
-}
-
-/* ── MAP EMBED ── */
-.map-section {
-  margin-bottom: 40px;
-}
-.map-section-hdr {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
-}
-.map-embed-wrap {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-}
-.map-placeholder {
-  height: 480px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  background: linear-gradient(135deg, #eef3fa 0%, #d6e4f5 100%);
-  color: var(--navy);
-}
-.map-placeholder-icon {
-  font-size: 48px;
-  opacity: 0.4;
-}
-.map-placeholder-title {
-  font-family: 'Source Serif 4', serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: var(--navy);
-}
-.map-placeholder-sub {
-  font-size: 12px;
-  color: var(--muted);
-  text-align: center;
-  max-width: 360px;
-  line-height: 1.6;
-}
-.map-placeholder-badge {
-  background: rgba(42,85,152,0.12);
-  border: 1px dashed var(--navy);
-  border-radius: 5px;
-  padding: 6px 14px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.04em;
-}
-.map-embed-wrap iframe {
-  width: 100%;
-  height: 480px;
-  border: none;
-  display: block;
-}
-
-/* ── SEARCH BAR ── */
-.search-section {
-  margin-bottom: 24px;
-}
-.muni-search-wrap {
-  position: relative;
-}
-.muni-search-icon {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: var(--muted);
-  pointer-events: none;
-}
-.muni-search {
-  width: 100%;
-  padding: 12px 40px 12px 42px;
-  font-size: 14px;
-  font-family: 'Source Sans 3', sans-serif;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--white);
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-}
-.muni-search:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(72,153,224,0.15);
-}
+.muni-btn.disabled { background: #e2e8f0; color: #94a3b8; cursor: default; pointer-events: none; }
+.muni-btn-secondary { display: inline-flex; align-items: center; gap: 5px; background: transparent; color: var(--navy); font-size: 12px; font-weight: 700; padding: 7px 13px; border-radius: 5px; text-decoration: none; border: 1px solid var(--rule); cursor: pointer; transition: background 0.2s, border-color 0.2s; font-family: 'Source Sans 3', sans-serif; }
+.muni-btn-secondary:hover { background: var(--accent-lt); border-color: var(--accent); }
+.muni-btn-secondary.disabled { color: #94a3b8; border-color: #e2e8f0; cursor: default; pointer-events: none; }
+.map-section { margin-bottom: 40px; }
+.map-embed-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; position: relative; }
+.map-placeholder { height: 480px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: linear-gradient(135deg, #eef3fa 0%, #d6e4f5 100%); color: var(--navy); }
+.map-placeholder-icon { font-size: 48px; opacity: 0.4; }
+.map-placeholder-title { font-family: 'Source Serif 4', serif; font-size: 18px; font-weight: 600; color: var(--navy); }
+.map-placeholder-sub { font-size: 12px; color: var(--muted); text-align: center; max-width: 360px; line-height: 1.6; }
+.map-placeholder-badge { background: rgba(42,85,152,0.12); border: 1px dashed var(--navy); border-radius: 5px; padding: 6px 14px; font-size: 11px; font-weight: 700; color: var(--navy); letter-spacing: 0.04em; }
+.map-embed-wrap iframe { width: 100%; height: 480px; border: none; display: block; }
+.search-section { margin-bottom: 24px; }
+.muni-search-wrap { position: relative; }
+.muni-search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 16px; color: var(--muted); pointer-events: none; }
+.muni-search { width: 100%; padding: 12px 40px 12px 42px; font-size: 14px; font-family: 'Source Sans 3', sans-serif; border: 1px solid var(--border); border-radius: 8px; background: var(--white); color: var(--text); outline: none; transition: border-color 0.2s, box-shadow 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.04); }
+.muni-search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(72,153,224,0.15); }
 .muni-search::placeholder { color: #94a3b8; }
-.muni-search-clear {
-  position: absolute;
-  right: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: #94a3b8;
-  cursor: pointer;
-  display: none;
-  line-height: 1;
-  background: none;
-  border: none;
-}
+.muni-search-clear { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 20px; color: #94a3b8; cursor: pointer; display: none; line-height: 1; background: none; border: none; }
 .muni-search-clear:hover { color: var(--navy); }
-.no-results {
-  display: none;
-  text-align: center;
-  padding: 32px;
-  color: var(--muted);
-  font-size: 13px;
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  margin-bottom: 14px;
-}
-
-/* ── BACK TO TOP ── */
-.back-to-top {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 44px;
-  height: 44px;
-  background: var(--navy);
-  color: var(--white);
-  border: none;
-  border-radius: 50%;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(26,47,94,0.35);
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.25s, transform 0.25s, background 0.2s;
-  pointer-events: none;
-  z-index: 200;
-}
-.back-to-top.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: all;
-}
+.no-results { display: none; text-align: center; padding: 32px; color: var(--muted); font-size: 13px; background: var(--white); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 14px; }
+.back-to-top { position: fixed; bottom: 28px; right: 28px; width: 44px; height: 44px; background: var(--navy); color: var(--white); border: none; border-radius: 50%; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(26,47,94,0.35); opacity: 0; transform: translateY(12px); transition: opacity 0.25s, transform 0.25s, background 0.2s; pointer-events: none; z-index: 200; }
+.back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: all; }
 .back-to-top:hover { background: var(--navy-lt); }
-.info-panel {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 22px 24px;
-  margin-bottom: 28px;
-  border-left: 4px solid var(--accent);
-}
-.info-panel h3 {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--navy);
-  margin-bottom: 8px;
-}
-.info-panel p {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.7;
-}
-.info-panel a {
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 600;
-}
-.info-panel a:hover { text-decoration: underline; }
-
-/* ── DISCLAIMER ── */
-.disclaimer {
-  background: #f4f6f9;
-  border: 1px solid #dde3ed;
-  border-radius: 8px;
-  padding: 14px 18px;
-  font-size: 12px;
-  color: #4A5568;
-  line-height: 1.65;
-}
-
-/* ── FOOTER ── */
-footer {
-  background: var(--navy-dk);
-  border-top: 4px solid var(--accent);
-  padding: 32px 40px;
-  margin-top: 0;
-}
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.footer-left {
-  font-size: 12px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.8;
-}
+.info-panel { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 22px 24px; margin-bottom: 28px; border-left: 4px solid var(--accent); }
+.info-panel h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.info-panel p { font-size: 12px; color: var(--muted); line-height: 1.7; }
+footer { background: var(--navy-dk); border-top: 4px solid var(--accent); padding: 32px 40px; margin-top: 0; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer-left { font-size: 12px; color: rgba(255,255,255,0.45); line-height: 1.8; }
 .footer-left strong { color: rgba(255,255,255,0.75); }
-.footer-links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-.footer-links a {
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-.footer-links a:hover { color: var(--white); }
-
 @media (max-width: 700px) {
   .hero { padding: 36px 20px 32px; }
   .hero h1 { font-size: 28px; }
@@ -632,7 +115,6 @@ footer {
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-inner">
     <div class="header-brand">
@@ -652,7 +134,6 @@ footer {
   </div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div style="display:flex;align-items:center;gap:60px;">
@@ -666,13 +147,15 @@ footer {
           </div>
           <div class="hero-divider"></div>
           <div class="hero-stat">
-            <div class="hero-stat-num">1</div>
+            <!-- UPDATE: currently 7 fully live (both code + map) -->
+            <div class="hero-stat-num">7</div>
             <div class="hero-stat-lbl">Available Now</div>
           </div>
           <div class="hero-divider"></div>
           <div class="hero-stat">
-            <div class="hero-stat-num">13</div>
-            <div class="hero-stat-lbl">Coming Soon</div>
+            <!-- UPDATE: 7 have map only, zoning code PDF still needed -->
+            <div class="hero-stat-num">7</div>
+            <div class="hero-stat-lbl">Zoning Code Pending</div>
           </div>
         </div>
       </div>
@@ -686,18 +169,19 @@ footer {
   </div>
 </div>
 
-<!-- MAIN -->
 <main class="main">
 
-  <!-- INTERACTIVE MAP -->
+  <!-- ============================================================
+       INTERACTIVE MAP
+       When ready: delete the map-placeholder div and replace with:
+       <iframe src="YOUR_ARCGIS_EMBED_URL" width="100%" height="480" frameborder="0" allowfullscreen></iframe>
+       ============================================================ -->
   <div class="map-section">
-    <div class="map-section-hdr">
+    <div class="section-hdr">
       <div class="section-hdr-label">Interactive Zoning Map</div>
       <div class="section-hdr-line"></div>
     </div>
     <div class="map-embed-wrap">
-      <!-- PLACEHOLDER: Replace the div below with an <iframe> tag once your ArcGIS web map is ready -->
-      <!-- Example: <iframe src="YOUR_ARCGIS_EMBED_URL" width="100%" height="480" frameborder="0" allowfullscreen></iframe> -->
       <div class="map-placeholder">
         <div class="map-placeholder-icon">&#128506;</div>
         <div class="map-placeholder-title">Orleans County Zoning Districts Map</div>
@@ -707,7 +191,6 @@ footer {
     </div>
   </div>
 
-  <!-- MUNICIPALITY SEARCH -->
   <div class="search-section">
     <div class="muni-search-wrap">
       <span class="muni-search-icon">&#128269;</span>
@@ -717,7 +200,9 @@ footer {
   </div>
   <div class="no-results" id="noResults">No municipalities match your search. Try a town or village name.</div>
 
-  <!-- TOWNS -->
+  <!-- ==============================================================
+       TOWNS
+       ============================================================== -->
   <div class="section-hdr" id="towns-hdr">
     <div class="section-hdr-label">Towns</div>
     <div class="section-hdr-line"></div>
@@ -726,21 +211,211 @@ footer {
 
   <div class="muni-grid">
 
-    <!-- TOWN OF YATES -->
+    <!-- ==========================================
+         TOWN OF ALBION — FULLY LIVE
+         Code: eCode360
+         Map: ./albiontown/Town of Albion.pdf
+         ========================================== -->
     <div class="muni-card available">
       <div class="muni-card-top">
-        <div>
-          <div class="muni-type-badge">TOWN</div>
-          <div class="muni-card-name">Town of Yates</div>
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Albion</div></div>
+        <div class="muni-status-badge available">&#9679; Available</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Official zoning code for the Town of Albion, hosted on eCode360.</p>
+        <div class="muni-tags"><span class="muni-tag">eCode360</span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <a class="muni-btn" href="https://ecode360.com/7196028#7196028" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./albiontown/Town of Albion.pdf" target="_blank">&#128204; Zoning Map</a>
         </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TOWN OF BARRE — FULLY LIVE
+         Code: eCode360
+         Map: ./barre/Town of Barre.pdf
+         ========================================== -->
+    <div class="muni-card available">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Barre</div></div>
+        <div class="muni-status-badge available">&#9679; Available</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Official zoning code for the Town of Barre, hosted on eCode360.</p>
+        <div class="muni-tags"><span class="muni-tag">eCode360</span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <a class="muni-btn" href="https://ecode360.com/13203338" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./barre/Town of Barre.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TOWN OF CARLTON — MAP ONLY
+         Code: PDF not yet uploaded
+               When ready: replace href below with ./carlton/FILENAME.pdf
+               Then change partial -> available and badge partial -> available
+         Map: ./carlton/Town of Carlton.pdf
+         ========================================== -->
+    <div class="muni-card partial">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Carlton</div></div>
+        <div class="muni-status-badge partial">&#9679; Map Available</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <!-- ZONING CODE: replace href with PDF path when uploaded -->
+          <a class="muni-btn disabled" href="./carlton/CARLTON_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./carlton/Town of Carlton.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TOWN OF CLARENDON — MAP ONLY
+         Code: PDF not yet uploaded
+               When ready: replace href below with ./clarendon/FILENAME.pdf
+               Then change partial -> available and badge partial -> available
+         Map: ./clarendon/Town of Clarendon.pdf
+         ========================================== -->
+    <div class="muni-card partial">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Clarendon</div></div>
+        <div class="muni-status-badge partial">&#9679; Map Available</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <!-- ZONING CODE: replace href with PDF path when uploaded -->
+          <a class="muni-btn disabled" href="./clarendon/CLARENDON_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./clarendon/Town of Clarendon.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TOWN OF GAINES — MAP ONLY
+         Code: PDF not yet uploaded
+               When ready: replace href below with ./gaines/FILENAME.pdf
+               Then change partial -> available and badge partial -> available
+         Map: ./gaines/Town of Gaines.pdf
+         ========================================== -->
+    <div class="muni-card partial">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Gaines</div></div>
+        <div class="muni-status-badge partial">&#9679; Map Available</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <!-- ZONING CODE: replace href with PDF path when uploaded -->
+          <a class="muni-btn disabled" href="./gaines/GAINES_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./gaines/Town of Gaines.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TOWN OF KENDALL — FULLY LIVE
+         Code: eCode360
+         Map: ./kendall/Town of Kendall.pdf
+         ========================================== -->
+    <div class="muni-card available">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Kendall</div></div>
+        <div class="muni-status-badge available">&#9679; Available</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Official zoning code for the Town of Kendall, hosted on eCode360.</p>
+        <div class="muni-tags"><span class="muni-tag">eCode360</span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <a class="muni-btn" href="https://ecode360.com/14434541#14434541" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./kendall/Town of Kendall.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TOWN OF MURRAY — MAP ONLY
+         Code: PDF not yet uploaded
+               When ready: replace href below with ./murray/FILENAME.pdf
+               Then change partial -> available and badge partial -> available
+         Map: ./murray/Town of Murray.pdf
+         ========================================== -->
+    <div class="muni-card partial">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Murray</div></div>
+        <div class="muni-status-badge partial">&#9679; Map Available</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <!-- ZONING CODE: replace href with PDF path when uploaded -->
+          <a class="muni-btn disabled" href="./murray/MURRAY_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./murray/Town of Murray.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TOWN OF RIDGEWAY — MAP ONLY
+         Code: PDF not yet uploaded
+               When ready: replace href below with ./ridgeway/FILENAME.pdf
+               Then change partial -> available and badge partial -> available
+         Map: ./ridgeway/Town of Ridgeway.pdf
+         ========================================== -->
+    <div class="muni-card partial">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Ridgeway</div></div>
+        <div class="muni-status-badge partial">&#9679; Map Available</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <!-- ZONING CODE: replace href with PDF path when uploaded -->
+          <a class="muni-btn disabled" href="./ridgeway/RIDGEWAY_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./ridgeway/Town of Ridgeway.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TOWN OF SHELBY — MAP ONLY
+         Code: PDF not yet uploaded
+               When ready: replace href below with ./shelby/FILENAME.pdf
+               Then change partial -> available and badge partial -> available
+         Map: ./shelby/Town of Shelby.pdf
+         ========================================== -->
+    <div class="muni-card partial">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Shelby</div></div>
+        <div class="muni-status-badge partial">&#9679; Map Available</div>
+      </div>
+      <div class="muni-card-body">
+        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <!-- ZONING CODE: replace href with PDF path when uploaded -->
+          <a class="muni-btn disabled" href="./shelby/SHELBY_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./shelby/Town of Shelby.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         TOWN OF YATES — FULLY LIVE
+         Code: eCode360
+         Map: ./yates/YatesZoningMap.pdf
+         ========================================== -->
+    <div class="muni-card available">
+      <div class="muni-card-top">
+        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Yates</div></div>
         <div class="muni-status-badge available">&#9679; Available</div>
       </div>
       <div class="muni-card-body">
         <p class="muni-desc">Official zoning code for the Town of Yates (Chapter 240), hosted on eCode360. Includes all district regulations, definitions, special permit criteria, and site plan review standards.</p>
-        <div class="muni-tags">
-          <span class="muni-tag">Chapter 240</span>
-          <span class="muni-tag">eCode360</span>
-        </div>
+        <div class="muni-tags"><span class="muni-tag">Chapter 240</span><span class="muni-tag">eCode360</span></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
           <a class="muni-btn" href="https://ecode360.com/41902668#41902668" target="_blank">View Zoning Code &#8594;</a>
           <a class="muni-btn-secondary" href="./yates/YatesZoningMap.pdf" target="_blank">&#128204; Zoning Map</a>
@@ -748,109 +423,11 @@ footer {
       </div>
     </div>
 
-    <!-- COMING SOON TOWNS -->
-    <div class="muni-card coming-soon">
-      <div class="muni-card-top">
-        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Albion</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
-      </div>
-      <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
-      </div>
-    </div>
+  </div><!-- end towns grid -->
 
-    <div class="muni-card coming-soon">
-      <div class="muni-card-top">
-        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Barre</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
-      </div>
-      <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
-      </div>
-    </div>
-
-    <div class="muni-card coming-soon">
-      <div class="muni-card-top">
-        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Carlton</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
-      </div>
-      <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
-      </div>
-    </div>
-
-    <div class="muni-card coming-soon">
-      <div class="muni-card-top">
-        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Clarendon</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
-      </div>
-      <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
-      </div>
-    </div>
-
-    <div class="muni-card coming-soon">
-      <div class="muni-card-top">
-        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Gaines</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
-      </div>
-      <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
-      </div>
-    </div>
-
-    <div class="muni-card coming-soon">
-      <div class="muni-card-top">
-        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Kendall</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
-      </div>
-      <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
-      </div>
-    </div>
-
-    <div class="muni-card coming-soon">
-      <div class="muni-card-top">
-        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Murray</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
-      </div>
-      <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
-      </div>
-    </div>
-
-    <div class="muni-card coming-soon">
-      <div class="muni-card-top">
-        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Ridgeway</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
-      </div>
-      <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
-      </div>
-    </div>
-
-    <div class="muni-card coming-soon">
-      <div class="muni-card-top">
-        <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Shelby</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
-      </div>
-      <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- VILLAGES -->
+  <!-- ==============================================================
+       VILLAGES
+       ============================================================== -->
   <div class="section-hdr" id="villages-hdr">
     <div class="section-hdr-label">Villages</div>
     <div class="section-hdr-line"></div>
@@ -859,53 +436,90 @@ footer {
 
   <div class="muni-grid">
 
-    <div class="muni-card coming-soon">
+    <!-- ==========================================
+         VILLAGE OF ALBION — FULLY LIVE
+         Code: eCode360
+         Map: ./albionvillage/Village of Albion.pdf
+         ========================================== -->
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Albion</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
+        <div class="muni-status-badge available">&#9679; Available</div>
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
+        <p class="muni-desc">Official zoning code for the Village of Albion, hosted on eCode360.</p>
+        <div class="muni-tags"><span class="muni-tag">eCode360</span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <a class="muni-btn" href="https://ecode360.com/7200306#7200306" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./albionvillage/Village of Albion.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
       </div>
     </div>
 
-    <div class="muni-card coming-soon">
+    <!-- ==========================================
+         VILLAGE OF HOLLEY — FULLY LIVE
+         Code: eCode360
+         Map: ./holley/Village of Holley.pdf
+         ========================================== -->
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Holley</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
+        <div class="muni-status-badge available">&#9679; Available</div>
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
+        <p class="muni-desc">Official zoning code for the Village of Holley, hosted on eCode360.</p>
+        <div class="muni-tags"><span class="muni-tag">eCode360</span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <a class="muni-btn" href="https://ecode360.com/11001599#11001599" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./holley/Village of Holley.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
       </div>
     </div>
 
-    <div class="muni-card coming-soon">
+    <!-- ==========================================
+         VILLAGE OF LYNDONVILLE — MAP ONLY
+         Code: PDF not yet uploaded
+               When ready: replace href below with ./lyndonville/FILENAME.pdf
+               Then change partial -> available and badge partial -> available
+         Map: ./lyndonville/Village of Lyndonville.pdf
+         ========================================== -->
+    <div class="muni-card partial">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Lyndonville</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
+        <div class="muni-status-badge partial">&#9679; Map Available</div>
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
+        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <!-- ZONING CODE: replace href with PDF path when uploaded -->
+          <a class="muni-btn disabled" href="./lyndonville/LYNDONVILLE_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./lyndonville/Village of Lyndonville.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
       </div>
     </div>
 
-    <div class="muni-card coming-soon">
+    <!-- ==========================================
+         VILLAGE OF MEDINA — FULLY LIVE
+         Code: eCode360
+         Map: ./medina/Village of Medina.pdf
+         ========================================== -->
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Medina</div></div>
-        <div class="muni-status-badge soon">Coming Soon</div>
+        <div class="muni-status-badge available">&#9679; Available</div>
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning code and map links coming soon.</p>
-        <button class="muni-btn disabled" disabled>Coming Soon</button>
+        <p class="muni-desc">Official zoning code for the Village of Medina, hosted on eCode360.</p>
+        <div class="muni-tags"><span class="muni-tag">eCode360</span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
+          <a class="muni-btn" href="https://ecode360.com/13955062#13955062" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn-secondary" href="./medina/Village of Medina.pdf" target="_blank">&#128204; Zoning Map</a>
+        </div>
       </div>
     </div>
 
-  </div>
+  </div><!-- end villages grid -->
 
-  <!-- COMBINED INFO + DISCLAIMER PANEL -->
   <div class="info-panel">
     <h3>About This Directory</h3>
     <p>This directory is maintained by the Orleans County Department of Planning and Development as a public resource for property owners, residents, developers, and planning professionals seeking zoning information across Orleans County's towns and villages. All zoning code links connect directly to the official published source for each municipality, though zoning ordinances are subject to amendment and the linked sources may not always reflect the most recent changes. Zoning determines what uses are permitted on a given parcel, what dimensional standards apply, and what approvals may be required before development or a change of use can occur. If you have questions about a specific property or project, contact the relevant Town or Village Zoning Office or Code Enforcement Officer directly. This site is for general informational purposes only and does not constitute legal advice or an official zoning determination.</p>
@@ -913,7 +527,6 @@ footer {
 
 </main>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-left">
@@ -923,57 +536,42 @@ footer {
   </div>
 </footer>
 
-<!-- BACK TO TOP -->
 <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8679;</button>
 
 <script>
-// Back to top visibility
 window.addEventListener('scroll', function() {
-  const btn = document.getElementById('backToTop');
-  if (window.scrollY > 400) {
-    btn.classList.add('visible');
-  } else {
-    btn.classList.remove('visible');
-  }
+  document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
 });
 
-// Municipality search filter
 function filterMunis(query) {
   const q = query.trim().toLowerCase();
-  const clearBtn = document.getElementById('muniClear');
-  const noResults = document.getElementById('noResults');
-  clearBtn.style.display = q ? 'block' : 'none';
+  document.getElementById('muniClear').style.display = q ? 'block' : 'none';
 
   const cards = document.querySelectorAll('.muni-card');
   let visibleCount = 0;
-
   cards.forEach(function(card) {
     const name = card.querySelector('.muni-card-name');
     if (!name) return;
-    const text = name.textContent.toLowerCase();
-    const match = !q || text.includes(q);
+    const match = !q || name.textContent.toLowerCase().includes(q);
     card.style.display = match ? '' : 'none';
     if (match) visibleCount++;
   });
 
-  // Show/hide section headers based on whether any cards in that section are visible
-  const townCards = document.querySelectorAll('#towns-hdr ~ .muni-grid .muni-card');
-  const villageCards = document.querySelectorAll('#villages-hdr ~ .muni-grid .muni-card');
   const townHdr = document.getElementById('towns-hdr');
   const villageHdr = document.getElementById('villages-hdr');
   const townGrid = townHdr ? townHdr.nextElementSibling : null;
   const villageGrid = villageHdr ? villageHdr.nextElementSibling : null;
 
   let townVisible = 0, villageVisible = 0;
-  townCards.forEach(c => { if (c.style.display !== 'none') townVisible++; });
-  villageCards.forEach(c => { if (c.style.display !== 'none') villageVisible++; });
+  document.querySelectorAll('#towns-hdr ~ .muni-grid .muni-card').forEach(c => { if (c.style.display !== 'none') townVisible++; });
+  document.querySelectorAll('#villages-hdr ~ .muni-grid .muni-card').forEach(c => { if (c.style.display !== 'none') villageVisible++; });
 
   if (townHdr) townHdr.style.display = townVisible > 0 ? '' : 'none';
   if (villageHdr) villageHdr.style.display = villageVisible > 0 ? '' : 'none';
   if (townGrid) townGrid.style.display = townVisible > 0 ? '' : 'none';
   if (villageGrid) villageGrid.style.display = villageVisible > 0 ? '' : 'none';
 
-  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+  document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
 }
 
 function clearMuniSearch() {
