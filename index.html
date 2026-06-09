@@ -43,11 +43,7 @@ header { background: var(--navy-dk); border-bottom: 4px solid var(--accent); pad
 .hero h1 { font-family: 'Source Serif 4', serif; font-size: 40px; font-weight: 600; color: var(--white); line-height: 1.18; margin-bottom: 18px; max-width: 640px; }
 .hero h1 em { font-style: italic; color: rgba(255,255,255,0.65); font-weight: 300; }
 .hero-desc { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.75; max-width: 620px; margin-bottom: 32px; }
-.hero-meta { display: flex; gap: 28px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
-.hero-stat { display: flex; flex-direction: column; gap: 3px; }
-.hero-stat-num { font-size: 26px; font-weight: 700; color: var(--white); line-height: 1; }
-.hero-stat-lbl { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; text-transform: uppercase; }
-.hero-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.15); align-self: center; }
+
 .main { max-width: 1100px; margin: 0 auto; padding: 48px 40px 64px; }
 .section-hdr { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
 .section-hdr-label { font-size: 11px; font-weight: 700; color: var(--white); letter-spacing: 0.08em; text-transform: uppercase; background: var(--navy); padding: 4px 12px; border-radius: 3px; white-space: nowrap; }
@@ -60,10 +56,7 @@ header { background: var(--navy-dk); border-bottom: 4px solid var(--accent); pad
 .muni-card.coming-soon { opacity: 0.55; }
 .muni-card-top { background: var(--navy); padding: 14px 16px 12px; display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 3px solid var(--accent); }
 .muni-type-badge { background: rgba(255,255,255,0.14); border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: 0.06em; width: fit-content; }
-.muni-status-badge { border-radius: 3px; padding: 2px 7px; font-size: 10px; font-weight: 700; letter-spacing: 0.04em; white-space: nowrap; }
-.muni-status-badge.available { background: rgba(72,153,224,0.25); color: #90cdf4; }
-.muni-status-badge.partial { background: rgba(201,168,76,0.25); color: #e2c97e; }
-.muni-status-badge.soon { background: rgba(100,116,139,0.2); color: #94a3b8; }
+
 .muni-card-name { font-size: 15px; font-weight: 700; color: var(--white); margin-top: 7px; }
 .muni-card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
 .muni-desc { font-size: 12px; color: var(--muted); line-height: 1.65; }
@@ -140,24 +133,7 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
       <div style="flex:1;">
         <h1>Municipal Zoning<br><em>Regulations Directory</em></h1>
         <p class="hero-desc">A centralized directory of official zoning codes and zoning maps for towns and villages across Orleans County, New York. Links connect directly to official municipal sources so members of the public, property owners, developers, and planning professionals can quickly access the zoning regulations that apply to their property or project.</p>
-        <div class="hero-meta">
-          <div class="hero-stat">
-            <div class="hero-stat-num">14</div>
-            <div class="hero-stat-lbl">Municipalities</div>
-          </div>
-          <div class="hero-divider"></div>
-          <div class="hero-stat">
-            <!-- UPDATE: currently 7 fully live (both code + map) -->
-            <div class="hero-stat-num">7</div>
-            <div class="hero-stat-lbl">Available Now</div>
-          </div>
-          <div class="hero-divider"></div>
-          <div class="hero-stat">
-            <!-- UPDATE: 7 have map only, zoning code PDF still needed -->
-            <div class="hero-stat-num">7</div>
-            <div class="hero-stat-lbl">Zoning Code Pending</div>
-          </div>
-        </div>
+
       </div>
       <div style="flex:0 0 280px;border-left:1px solid rgba(255,255,255,0.15);padding-left:36px;align-self:center;">
         <div style="font-size:52px;color:rgba(255,255,255,0.18);font-family:'Source Serif 4',serif;line-height:1;margin-bottom:10px;">&ldquo;</div>
@@ -219,7 +195,7 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Albion</div></div>
-        <div class="muni-status-badge available">&#9679; Available</div>
+
       </div>
       <div class="muni-card-body">
         <p class="muni-desc">Official zoning code for the Town of Albion, hosted on eCode360.</p>
@@ -239,7 +215,7 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Barre</div></div>
-        <div class="muni-status-badge available">&#9679; Available</div>
+
       </div>
       <div class="muni-card-body">
         <p class="muni-desc">Official zoning code for the Town of Barre, hosted on eCode360.</p>
@@ -252,66 +228,60 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     </div>
 
     <!-- ==========================================
-         TOWN OF CARLTON — MAP ONLY
-         Code: PDF not yet uploaded
-               When ready: replace href below with ./carlton/FILENAME.pdf
-               Then change partial -> available and badge partial -> available
-         Map: ./carlton/Town of Carlton.pdf
+         TOWN OF CARLTON — FULLY LIVE
+         Code: ./carlton/Town of Carlton Zoning.pdf
+         Map:  ./carlton/Town of Carlton.pdf
          ========================================== -->
-    <div class="muni-card partial">
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Carlton</div></div>
-        <div class="muni-status-badge partial">&#9679; Map Available</div>
+
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <p class="muni-desc">Official zoning code for the Town of Carlton.</p>
+        <div class="muni-tags"><span class="muni-tag">PDF</span></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-          <!-- ZONING CODE: replace href with PDF path when uploaded -->
-          <a class="muni-btn disabled" href="./carlton/CARLTON_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn" href="./carlton/Town of Carlton Zoning.pdf" target="_blank">View Zoning Code &#8594;</a>
           <a class="muni-btn-secondary" href="./carlton/Town of Carlton.pdf" target="_blank">&#128204; Zoning Map</a>
         </div>
       </div>
     </div>
 
     <!-- ==========================================
-         TOWN OF CLARENDON — MAP ONLY
-         Code: PDF not yet uploaded
-               When ready: replace href below with ./clarendon/FILENAME.pdf
-               Then change partial -> available and badge partial -> available
-         Map: ./clarendon/Town of Clarendon.pdf
+         TOWN OF CLARENDON — FULLY LIVE
+         Code: ./clarendon/Town of Clarendon Zoning.pdf
+         Map:  ./clarendon/Town of Clarendon.pdf
          ========================================== -->
-    <div class="muni-card partial">
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Clarendon</div></div>
-        <div class="muni-status-badge partial">&#9679; Map Available</div>
+
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <p class="muni-desc">Official zoning code for the Town of Clarendon.</p>
+        <div class="muni-tags"><span class="muni-tag">PDF</span></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-          <!-- ZONING CODE: replace href with PDF path when uploaded -->
-          <a class="muni-btn disabled" href="./clarendon/CLARENDON_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn" href="./clarendon/Town of Clarendon Zoning.pdf" target="_blank">View Zoning Code &#8594;</a>
           <a class="muni-btn-secondary" href="./clarendon/Town of Clarendon.pdf" target="_blank">&#128204; Zoning Map</a>
         </div>
       </div>
     </div>
 
     <!-- ==========================================
-         TOWN OF GAINES — MAP ONLY
-         Code: PDF not yet uploaded
-               When ready: replace href below with ./gaines/FILENAME.pdf
-               Then change partial -> available and badge partial -> available
-         Map: ./gaines/Town of Gaines.pdf
+         TOWN OF GAINES — FULLY LIVE
+         Code: ./gaines/Town of Gaines Zoning.pdf
+         Map:  ./gaines/Town of Gaines.pdf
          ========================================== -->
-    <div class="muni-card partial">
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Gaines</div></div>
-        <div class="muni-status-badge partial">&#9679; Map Available</div>
+
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <p class="muni-desc">Official zoning code for the Town of Gaines.</p>
+        <div class="muni-tags"><span class="muni-tag">PDF</span></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-          <!-- ZONING CODE: replace href with PDF path when uploaded -->
-          <a class="muni-btn disabled" href="./gaines/GAINES_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn" href="./gaines/Town of Gaines Zoning.pdf" target="_blank">View Zoning Code &#8594;</a>
           <a class="muni-btn-secondary" href="./gaines/Town of Gaines.pdf" target="_blank">&#128204; Zoning Map</a>
         </div>
       </div>
@@ -325,7 +295,7 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Kendall</div></div>
-        <div class="muni-status-badge available">&#9679; Available</div>
+
       </div>
       <div class="muni-card-body">
         <p class="muni-desc">Official zoning code for the Town of Kendall, hosted on eCode360.</p>
@@ -338,66 +308,60 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     </div>
 
     <!-- ==========================================
-         TOWN OF MURRAY — MAP ONLY
-         Code: PDF not yet uploaded
-               When ready: replace href below with ./murray/FILENAME.pdf
-               Then change partial -> available and badge partial -> available
-         Map: ./murray/Town of Murray.pdf
+         TOWN OF MURRAY — FULLY LIVE
+         Code: ./murray/Town of Murray Zoning.pdf
+         Map:  ./murray/Town of Murray.pdf
          ========================================== -->
-    <div class="muni-card partial">
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Murray</div></div>
-        <div class="muni-status-badge partial">&#9679; Map Available</div>
+
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <p class="muni-desc">Official zoning code for the Town of Murray.</p>
+        <div class="muni-tags"><span class="muni-tag">PDF</span></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-          <!-- ZONING CODE: replace href with PDF path when uploaded -->
-          <a class="muni-btn disabled" href="./murray/MURRAY_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn" href="./murray/Town of Murray Zoning.pdf" target="_blank">View Zoning Code &#8594;</a>
           <a class="muni-btn-secondary" href="./murray/Town of Murray.pdf" target="_blank">&#128204; Zoning Map</a>
         </div>
       </div>
     </div>
 
     <!-- ==========================================
-         TOWN OF RIDGEWAY — MAP ONLY
-         Code: PDF not yet uploaded
-               When ready: replace href below with ./ridgeway/FILENAME.pdf
-               Then change partial -> available and badge partial -> available
-         Map: ./ridgeway/Town of Ridgeway.pdf
+         TOWN OF RIDGEWAY — FULLY LIVE
+         Code: ./ridgeway/Town of Ridgeway Zoning.pdf
+         Map:  ./ridgeway/Town of Ridgeway.pdf
          ========================================== -->
-    <div class="muni-card partial">
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Ridgeway</div></div>
-        <div class="muni-status-badge partial">&#9679; Map Available</div>
+
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <p class="muni-desc">Official zoning code for the Town of Ridgeway.</p>
+        <div class="muni-tags"><span class="muni-tag">PDF</span></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-          <!-- ZONING CODE: replace href with PDF path when uploaded -->
-          <a class="muni-btn disabled" href="./ridgeway/RIDGEWAY_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn" href="./ridgeway/Town of Ridgeway Zoning.pdf" target="_blank">View Zoning Code &#8594;</a>
           <a class="muni-btn-secondary" href="./ridgeway/Town of Ridgeway.pdf" target="_blank">&#128204; Zoning Map</a>
         </div>
       </div>
     </div>
 
     <!-- ==========================================
-         TOWN OF SHELBY — MAP ONLY
-         Code: PDF not yet uploaded
-               When ready: replace href below with ./shelby/FILENAME.pdf
-               Then change partial -> available and badge partial -> available
-         Map: ./shelby/Town of Shelby.pdf
+         TOWN OF SHELBY — FULLY LIVE
+         Code: ./shelby/Town of Shelby Zoning.pdf
+         Map:  ./shelby/Town of Shelby.pdf
          ========================================== -->
-    <div class="muni-card partial">
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Shelby</div></div>
-        <div class="muni-status-badge partial">&#9679; Map Available</div>
+
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <p class="muni-desc">Official zoning code for the Town of Shelby.</p>
+        <div class="muni-tags"><span class="muni-tag">PDF</span></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-          <!-- ZONING CODE: replace href with PDF path when uploaded -->
-          <a class="muni-btn disabled" href="./shelby/SHELBY_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn" href="./shelby/Town of Shelby Zoning.pdf" target="_blank">View Zoning Code &#8594;</a>
           <a class="muni-btn-secondary" href="./shelby/Town of Shelby.pdf" target="_blank">&#128204; Zoning Map</a>
         </div>
       </div>
@@ -411,7 +375,7 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">TOWN</div><div class="muni-card-name">Town of Yates</div></div>
-        <div class="muni-status-badge available">&#9679; Available</div>
+
       </div>
       <div class="muni-card-body">
         <p class="muni-desc">Official zoning code for the Town of Yates (Chapter 240), hosted on eCode360. Includes all district regulations, definitions, special permit criteria, and site plan review standards.</p>
@@ -444,7 +408,7 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Albion</div></div>
-        <div class="muni-status-badge available">&#9679; Available</div>
+
       </div>
       <div class="muni-card-body">
         <p class="muni-desc">Official zoning code for the Village of Albion, hosted on eCode360.</p>
@@ -464,7 +428,7 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Holley</div></div>
-        <div class="muni-status-badge available">&#9679; Available</div>
+
       </div>
       <div class="muni-card-body">
         <p class="muni-desc">Official zoning code for the Village of Holley, hosted on eCode360.</p>
@@ -477,22 +441,20 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     </div>
 
     <!-- ==========================================
-         VILLAGE OF LYNDONVILLE — MAP ONLY
-         Code: PDF not yet uploaded
-               When ready: replace href below with ./lyndonville/FILENAME.pdf
-               Then change partial -> available and badge partial -> available
-         Map: ./lyndonville/Village of Lyndonville.pdf
+         VILLAGE OF LYNDONVILLE — FULLY LIVE
+         Code: ./lyndonville/Village of Lyndonville Zoning.pdf
+         Map:  ./lyndonville/Village of Lyndonville.pdf
          ========================================== -->
-    <div class="muni-card partial">
+    <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Lyndonville</div></div>
-        <div class="muni-status-badge partial">&#9679; Map Available</div>
+
       </div>
       <div class="muni-card-body">
-        <p class="muni-desc">Zoning map available. Zoning code link coming soon.</p>
+        <p class="muni-desc">Official zoning code for the Village of Lyndonville.</p>
+        <div class="muni-tags"><span class="muni-tag">PDF</span></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px;">
-          <!-- ZONING CODE: replace href with PDF path when uploaded -->
-          <a class="muni-btn disabled" href="./lyndonville/LYNDONVILLE_ZONING_CODE.pdf" target="_blank">View Zoning Code &#8594;</a>
+          <a class="muni-btn" href="./lyndonville/Village of Lyndonville Zoning.pdf" target="_blank">View Zoning Code &#8594;</a>
           <a class="muni-btn-secondary" href="./lyndonville/Village of Lyndonville.pdf" target="_blank">&#128204; Zoning Map</a>
         </div>
       </div>
@@ -506,7 +468,7 @@ footer { background: var(--navy-dk); border-top: 4px solid var(--accent); paddin
     <div class="muni-card available">
       <div class="muni-card-top">
         <div><div class="muni-type-badge">VILLAGE</div><div class="muni-card-name">Village of Medina</div></div>
-        <div class="muni-status-badge available">&#9679; Available</div>
+
       </div>
       <div class="muni-card-body">
         <p class="muni-desc">Official zoning code for the Village of Medina, hosted on eCode360.</p>
